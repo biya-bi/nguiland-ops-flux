@@ -4,5 +4,6 @@ metadata:
   name: git-event-listener
   namespace: ${ENVIRONMENT}
 spec:
-  type: generic
-  address: http://git-event-listener.${ENVIRONMENT}.svc.cluster.local:8080/events
+  type: nats
+  address: nats://nats.${ENVIRONMENT}.svc.cluster.local:4222
+  channel: flux.gitrepository.events
