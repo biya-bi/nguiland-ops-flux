@@ -1,8 +1,8 @@
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Provider
 metadata:
-  name: maven-lib
+  name: git-event-listener
   namespace: ${ENVIRONMENT}
 spec:
   type: generic
-  address: http://el-maven-lib.${ENVIRONMENT}.svc.cluster.local:8080/
+  address: http://git-event-listener.${ENVIRONMENT}.svc.cluster.local:8080/events
