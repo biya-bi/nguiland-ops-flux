@@ -1,14 +1,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: optional-git-repositories
+  name: optional-dependency-graphs
   namespace: ${ENVIRONMENT}
 spec:
   interval: 10m
   timeout: 10m
   dependsOn:
-    - name: optional-dependency-graphs
-  path: ./common/optional/git-repositories
+    - name: optional-streams
+  path: ./common/optional/dependency-graphs
   prune: true
   sourceRef:
     kind: GitRepository
