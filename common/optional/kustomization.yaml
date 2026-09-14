@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - alerts
   - config-maps
+  - crds
   - helm-repositories
   - ingresses
   - kustomizations
