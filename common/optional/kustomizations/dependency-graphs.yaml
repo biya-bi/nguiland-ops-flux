@@ -1,0 +1,20 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: optional-dependency-graphs
+  namespace: ${ENVIRONMENT}
+spec:
+  interval: 10m
+  timeout: 10m
+  dependsOn:
+    - name: optional-streams
+  path: ./common/optional/dependency-graphs
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: env-settings
