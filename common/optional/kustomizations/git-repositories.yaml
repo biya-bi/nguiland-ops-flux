@@ -6,8 +6,6 @@ metadata:
 spec:
   interval: 10m
   timeout: 10m
-  dependsOn:
-    - name: optional-dependency-graphs
   path: ./common/optional/git-repositories
   prune: true
   sourceRef:
