@@ -4,6 +4,7 @@ resources:
   - alerts
   - config-maps
   - crds
+  - dependency-graphs
   - helm-repositories
   - ingresses
   - kustomizations
