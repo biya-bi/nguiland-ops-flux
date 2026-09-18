@@ -5,6 +5,7 @@ resources:
   - config-maps
   - crds
   - dependency-graphs
+  - git-repositories
   - helm-repositories
   - ingresses
   - kustomizations
