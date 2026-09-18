@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
   - ostock.yaml
   - sops-age.yaml
-  - tekton-cicd.yaml
-  - tekton-install.yaml
+

@@ -5,3 +5,5 @@ resources:
   - git-repositories.yaml
   - helm-releases.yaml
   - streams.yaml
+  - tekton-cicd.yaml
+  - tekton-install.yaml
