@@ -1,14 +1,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: optional-helm-releases
+  name: nats
   namespace: ${ENVIRONMENT}
 spec:
   interval: 10m
   timeout: 10m
   dependsOn:
     - name: common
-  path: ./common/optional/helm-releases
+  path: ./common/optional/nats
   prune: true
   sourceRef:
     kind: GitRepository
@@ -17,19 +17,11 @@ spec:
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2
       kind: HelmRelease
-      name: artifactory-oss
-      namespace: ${ENVIRONMENT}
-    - apiVersion: helm.toolkit.fluxcd.io/v2
-      kind: HelmRelease
       name: nats
       namespace: ${ENVIRONMENT}
     - apiVersion: helm.toolkit.fluxcd.io/v2
       kind: HelmRelease
       name: nack
-      namespace: ${ENVIRONMENT}
-    - apiVersion: helm.toolkit.fluxcd.io/v2
-      kind: HelmRelease
-      name: postgres
       namespace: ${ENVIRONMENT}
   postBuild:
     substituteFrom:
