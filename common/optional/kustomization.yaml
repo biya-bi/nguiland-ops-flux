@@ -6,6 +6,7 @@ resources:
   - crds
   - dependency-graphs
   - git-repositories
+  - helm-releases
   - helm-repositories
   - ingresses
   - kustomizations

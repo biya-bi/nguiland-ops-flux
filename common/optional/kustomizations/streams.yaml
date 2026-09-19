@@ -7,7 +7,7 @@ spec:
   interval: 10m
   timeout: 10m
   dependsOn:
-    - name: optional-helm-releases
+    - name: nats
   path: ./common/optional/streams
   prune: true
   sourceRef:
