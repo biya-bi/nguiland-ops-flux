@@ -9,6 +9,8 @@ spec:
   dependsOn:
     - name: chart-repository
       namespace: ${ENVIRONMENT}
+    - name: artifactory-jcr
+      namespace: ${ENVIRONMENT}
   chart:
     spec:
       chart: artifactory-oss
