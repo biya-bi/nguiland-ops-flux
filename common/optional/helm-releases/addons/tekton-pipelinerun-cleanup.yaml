@@ -5,6 +5,9 @@ metadata:
   namespace: ${ENVIRONMENT}
 spec:
   interval: 10m
+  dependsOn:
+    - name: artifactory-jcr
+      namespace: ${ENVIRONMENT}
   chart:
     spec:
       chart: org.nguiland.infra/tekton-pipelinerun-cleanup
