@@ -6,8 +6,8 @@ metadata:
 spec:
   interval: 10m
   timeout: 10m
-  dependsOn:
-    - name: common
+  # dependsOn:
+  #   - name: common
   path: ./common/optional/nats
   prune: true
   sourceRef:
