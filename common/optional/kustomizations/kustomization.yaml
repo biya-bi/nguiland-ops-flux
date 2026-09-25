@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
   - git-repositories.yaml
   - nats.yaml
+  - projects.yaml
   - streams.yaml
-  - tekton-cicd.yaml
-  - tekton-install.yaml
+
