@@ -11,7 +11,7 @@ spec:
       reconcileStrategy: Revision
       sourceRef:
         kind: GitRepository
-        name: helm
+        name: nguiland-ops-helm
       interval: 10m
   values:
     replicaCount: 1
