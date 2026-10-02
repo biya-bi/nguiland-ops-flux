@@ -4,7 +4,7 @@ metadata:
   name: bootstrap
   namespace: local
 spec:
-  interval: 10m0s
+  interval: 10m
   path: ./bootstrap
   prune: true
   sourceRef:

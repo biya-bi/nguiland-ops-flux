@@ -4,7 +4,7 @@ metadata:
   name: core
   namespace: ${ENVIRONMENT}
 spec:
-  interval: 10m0s
+  interval: 10m
   path: ./core/overlays/${ENVIRONMENT}
   prune: true
   sourceRef:
