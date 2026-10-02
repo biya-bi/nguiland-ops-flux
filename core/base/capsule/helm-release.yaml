@@ -28,3 +28,6 @@ spec:
     manager:
       options:
         capsuleConfiguration: default
+        administrators:
+          - kind: ServiceAccount
+            name: system:serviceaccount:flux-system:kustomize-controller
