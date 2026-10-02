@@ -6,7 +6,7 @@ metadata:
 spec:
   dependsOn:
     - name: core
-  interval: 10m0s
+  interval: 10m
   path: ./common/overlays/${ENVIRONMENT}
   prune: true
   sourceRef:

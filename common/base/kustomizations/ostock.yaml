@@ -6,7 +6,7 @@ metadata:
 spec:
   dependsOn:
     - name: sops-age
-  interval: 10m0s
+  interval: 10m
   path: ./overlays/${ENVIRONMENT}
   prune: true
   sourceRef:
