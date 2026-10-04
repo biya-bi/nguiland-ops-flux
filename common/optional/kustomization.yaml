@@ -4,7 +4,6 @@ resources:
   - config-maps
   - crds
   - helm-releases
-  - helm-repositories
   - ingresses
   - kustomizations
   - projects
