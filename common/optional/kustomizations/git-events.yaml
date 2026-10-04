@@ -1,14 +1,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: optional-streams
+  name: git-events
   namespace: ${ENVIRONMENT}
 spec:
   interval: 10m
   timeout: 10m
   dependsOn:
     - name: nats
-  path: ./common/optional/streams
+  path: ./common/optional/git-events
   prune: true
   sourceRef:
     kind: GitRepository
@@ -17,7 +17,7 @@ spec:
   healthChecks:
     - apiVersion: jetstream.nats.io/v1beta2
       kind: Stream
-      name: flux-gitrepository-events
+      name: git-events
       namespace: ${ENVIRONMENT}
   postBuild:
     substituteFrom:

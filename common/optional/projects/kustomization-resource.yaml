@@ -8,7 +8,7 @@ spec:
   timeout: 10m
   dependsOn:
     - name: teams-namespaces
-    - name: optional-streams
+    - name: git-events
   path: .
   prune: true
   sourceRef:
