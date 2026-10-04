@@ -3,14 +3,11 @@ kind: Kustomization
 resources:
   - crds
   - git-event-listener
-  - git-events/sync.yaml
   - helm-releases
   - ingresses
   - nats
   - postgres
-  - projects
   - providers
-  - teams
   - tekton
   - tenant-resources/sync.yaml
   - tekton-pipelinerun-cleanup

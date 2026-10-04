@@ -8,7 +8,7 @@ spec:
   timeout: 10m
   dependsOn:
     - name: nats
-  path: ./common/optional/git-events
+  path: ./common/base/git-events
   prune: true
   sourceRef:
     kind: GitRepository
