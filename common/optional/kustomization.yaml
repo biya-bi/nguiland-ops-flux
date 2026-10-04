@@ -9,4 +9,5 @@ resources:
   - kustomizations
   - providers
   - teams
+  - tekton
   - tenant-resources
