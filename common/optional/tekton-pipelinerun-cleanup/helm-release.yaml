@@ -5,6 +5,8 @@ metadata:
   namespace: ${ENVIRONMENT}
 spec:
   interval: 10m
+  releaseName: tekton-pipelinerun-cleanup
+  targetNamespace: cicd
   dependsOn:
     - name: artifactory-jcr
       namespace: ${ENVIRONMENT}

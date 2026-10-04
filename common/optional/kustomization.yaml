@@ -11,3 +11,4 @@ resources:
   - teams
   - tekton
   - tenant-resources/sync.yaml
+  - tekton-pipelinerun-cleanup
