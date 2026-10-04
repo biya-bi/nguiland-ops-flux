@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - config-maps
   - crds
+  - git-events
   - helm-releases
   - ingresses
   - kustomizations
