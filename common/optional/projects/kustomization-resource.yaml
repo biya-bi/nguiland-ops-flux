@@ -7,7 +7,8 @@ spec:
   interval: 10m
   timeout: 10m
   dependsOn:
-    - name: optional-git-repositories
+    - name: teams-namespaces
+    - name: optional-streams
   path: .
   prune: true
   sourceRef:
