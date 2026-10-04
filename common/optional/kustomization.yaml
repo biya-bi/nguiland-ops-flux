@@ -6,7 +6,6 @@ resources:
   - git-events
   - helm-releases
   - ingresses
-  - kustomizations
   - projects
   - providers
   - teams
