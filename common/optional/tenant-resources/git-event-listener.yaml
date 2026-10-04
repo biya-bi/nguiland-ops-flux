@@ -1,0 +1,17 @@
+apiVersion: capsule.clastix.io/v1beta2
+kind: GlobalTenantResource
+metadata:
+  name: git-event-listener
+spec:
+  tenantSelector:
+    matchLabels:
+      platform.nguiland.org/build-trigger: "true"
+
+  resyncPeriod: 10m
+
+  resources:
+    - namespacedItems:
+        - apiVersion: notification.toolkit.fluxcd.io/v1beta3
+          kind: Provider
+          name: git-event-listener
+          namespace: ${ENVIRONMENT}
