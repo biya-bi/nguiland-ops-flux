@@ -5,6 +5,7 @@ resources:
   - git-events/sync.yaml
   - helm-releases
   - ingresses
+  - nats
   - projects
   - providers
   - teams
