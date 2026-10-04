@@ -9,4 +9,4 @@ resources:
   - providers
   - teams
   - tekton
-  - tenant-resources
+  - tenant-resources/sync.yaml
