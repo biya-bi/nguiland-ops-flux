@@ -1,0 +1,20 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: teams-namespaces
+  namespace: ${ENVIRONMENT}
+spec:
+  interval: 10m
+  timeout: 10m
+  dependsOn:
+    - name: teams-tenants
+  path: ./namespaces
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: teams
+    namespace: ${ENVIRONMENT}
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: env-settings

@@ -8,3 +8,4 @@ resources:
   - ingresses
   - kustomizations
   - providers
+  - teams
