@@ -1,6 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - artifactory-jcr
   - config-maps
   - git-events/sync.yaml
   - git-repositories
