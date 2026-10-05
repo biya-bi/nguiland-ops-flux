@@ -6,8 +6,8 @@ resources:
   - config-maps
   - git-events/sync.yaml
   - git-repositories
-  - helm-releases
   - helm-repositories
+  - ingress-nginx
   - ingresses
   - keycloak
   - kustomizations
