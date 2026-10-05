@@ -9,6 +9,7 @@ resources:
   - helm-releases
   - helm-repositories
   - ingresses
+  - keycloak
   - kustomizations
   - policies
   - projects
