@@ -16,3 +16,6 @@ spec:
       interval: 10m
   values:
     replicaCount: 1
+    repoExtractor:
+      envMap:
+        FLUX_GIT_REPO_NAMESPACE: cicd
