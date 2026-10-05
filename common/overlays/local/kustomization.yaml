@@ -13,6 +13,23 @@ patches:
       name: nguiland
   - patch: |-
       - op: add
+        path: /spec/rules/-
+        value:
+          host: host.docker.internal
+          http:
+            paths:
+              - backend:
+                  service:
+                    name: artifactory-jcr
+                    port:
+                      number: 8082
+                path: /
+                pathType: Prefix
+    target:
+      kind: Ingress
+      name: nguiland
+  - patch: |-
+      - op: add
         path: /spec/insecure
         # We are on a cluster on our local development machine, so we can allow insecure connections to the registry,
         # which is assumed to be local as well. We shouldn't have to worry about certificates in this case, and this

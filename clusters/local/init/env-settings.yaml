@@ -6,6 +6,7 @@ metadata:
 data:
   ENVIRONMENT: local
   ARTIFACTORY_JCR_HOST: artifactory-jcr.local
+  ARTIFACTORY_JCR_IMAGE_HOST: host.docker.internal:80
   ARTIFACTORY_JCR_PORT: "8082"
   ARTIFACTORY_OSS_HOST: artifactory-oss.local
   ARTIFACTORY_OSS_PORT: "8082"
