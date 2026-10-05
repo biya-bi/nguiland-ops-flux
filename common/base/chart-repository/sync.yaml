@@ -1,0 +1,19 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: chart-repository
+  namespace: ${ENVIRONMENT}
+spec:
+  interval: 10m
+  dependsOn:
+    - name: projects
+  path: ./common/base/chart-repository
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: env-settings

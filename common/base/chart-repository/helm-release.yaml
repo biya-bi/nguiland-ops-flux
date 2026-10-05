@@ -12,6 +12,7 @@ spec:
       sourceRef:
         kind: GitRepository
         name: nguiland-ops-helm
+        namespace: cicd
       interval: 10m
   values:
     replicaCount: 1
