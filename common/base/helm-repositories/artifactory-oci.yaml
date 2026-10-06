@@ -5,7 +5,7 @@ metadata:
   namespace: ${ENVIRONMENT}
 spec:
   type: oci
-  url: oci://${ARTIFACTORY_JCR_HOST}:${ARTIFACTORY_JCR_PORT}/docker-local
+  url: oci://${ARTIFACTORY_JCR_IMAGE_HOST}/docker-local
   interval: 5m
   secretRef:
     name: docker-config
