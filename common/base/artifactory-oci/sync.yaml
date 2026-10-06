@@ -1,16 +1,16 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: tekton-pipelinerun-cleanup
+  name: artifactory-oci
   namespace: ${ENVIRONMENT}
 spec:
   interval: 10m
   timeout: 10m
   dependsOn:
-    - name: artifactory-oci
-    - name: teams-namespaces
-  path: ./common/optional/tekton-pipelinerun-cleanup
+    - name: artifactory-jcr
+  path: ./common/base/artifactory-oci
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system

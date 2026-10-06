@@ -7,7 +7,7 @@ spec:
   interval: 10m
   timeout: 10m
   dependsOn:
-    - name: artifactory-jcr
+    - name: artifactory-oci
     - name: teams-namespaces
     - name: git-events
   path: ./common/base/git-event-listener
