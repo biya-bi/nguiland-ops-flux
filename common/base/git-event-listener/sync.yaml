@@ -8,6 +8,7 @@ spec:
   timeout: 10m
   dependsOn:
     - name: teams-namespaces
+    - name: git-events
   path: ./common/base/git-event-listener
   prune: true
   sourceRef:
