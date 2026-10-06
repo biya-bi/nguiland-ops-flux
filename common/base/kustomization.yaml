@@ -3,10 +3,10 @@ kind: Kustomization
 resources:
   - artifactory-jcr/sync.yaml
   - artifactory-oci/sync.yaml
-  - chart-repository
+  - chart-repository/sync.yaml
   - config-maps
   - crds
-  - git-event-listener
+  - git-event-listener/sync.yaml
   - git-events/sync.yaml
   - git-repositories
   - helm-repositories
@@ -14,7 +14,7 @@ resources:
   - ingresses
   - keycloak
   - kustomizations
-  - nats
+  - nats/sync.yaml
   - policies
   - projects
   - providers

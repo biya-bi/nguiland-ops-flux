@@ -5,4 +5,4 @@ resources:
   - ingresses
   - postgres
   - tekton
-  - tekton-pipelinerun-cleanup
+  - tekton-pipelinerun-cleanup/sync.yaml
