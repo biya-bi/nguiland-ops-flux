@@ -8,6 +8,7 @@ spec:
   timeout: 10m
   dependsOn:
     - name: capsule
+    - name: sops-age
   path: ./tenants
   prune: true
   sourceRef:

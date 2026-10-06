@@ -5,6 +5,8 @@ metadata:
   namespace: ${ENVIRONMENT}
 spec:
   interval: 10m
+  dependsOn:
+    - name: sops-age
   path: ./install
   prune: true
   sourceRef:

@@ -8,6 +8,7 @@ spec:
   timeout: 10m
   dependsOn:
     - name: teams-namespaces
+    - name: sops-age
   path: ./common/optional/tenant-resources
   prune: true
   sourceRef:
