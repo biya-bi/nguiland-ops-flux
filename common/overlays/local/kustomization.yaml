@@ -29,16 +29,11 @@ patches:
       kind: Ingress
       name: nguiland
   - patch: |-
-      - op: add
-        path: /spec/insecure
-        # We are on a cluster on our local development machine, so we can allow insecure connections to the registry,
-        # which is assumed to be local as well. We shouldn't have to worry about certificates in this case, and this
-        # allows us to avoid the complexity of setting up a local certificate authority and issuing certificates for
-        # our local registry. In upper environments, we will have a valid certificate for the registry, so this patch
-        # have not been included in other overlays.
-        value: true
+      - op: replace
+        path: /spec/path
+        value: ./common/overlays/local/artifactory-oci
     target:
-      kind: HelmRepository
+      kind: Kustomization
       name: artifactory-oci
   - patch: |-
       - op: add
