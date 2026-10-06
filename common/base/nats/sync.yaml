@@ -1,19 +1,26 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: git-event-listener
+  name: nats
   namespace: ${ENVIRONMENT}
 spec:
   interval: 10m
   timeout: 10m
-  dependsOn:
-    - name: teams-namespaces
-  path: ./common/optional/git-event-listener
+  path: ./common/base/nats
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
+  healthChecks:
+    - apiVersion: helm.toolkit.fluxcd.io/v2
+      kind: HelmRelease
+      name: nats
+      namespace: ${ENVIRONMENT}
+    - apiVersion: helm.toolkit.fluxcd.io/v2
+      kind: HelmRelease
+      name: nack
+      namespace: ${ENVIRONMENT}
   postBuild:
     substituteFrom:
       - kind: ConfigMap

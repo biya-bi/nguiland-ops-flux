@@ -4,6 +4,8 @@ resources:
   - artifactory-jcr
   - chart-repository
   - config-maps
+  - crds
+  - git-event-listener
   - git-events/sync.yaml
   - git-repositories
   - helm-repositories
@@ -11,8 +13,10 @@ resources:
   - ingresses
   - keycloak
   - kustomizations
+  - nats
   - policies
   - projects
+  - providers
   - services
   - sops-age
   - teams
