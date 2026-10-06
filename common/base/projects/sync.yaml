@@ -9,6 +9,7 @@ spec:
   dependsOn:
     - name: teams-namespaces
     - name: git-events
+    - name: tenant-resources
   path: .
   prune: true
   sourceRef:
