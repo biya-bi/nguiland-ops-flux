@@ -24,4 +24,4 @@ spec:
       retries: 3
   values:
     image:
-      repository: ${ARTIFACTORY_JCR_IMAGE_HOST}/docker-local/org.nguiland.infra/git-event-listener
+      repository: ${IMAGE_REGISTRY_HOST}/docker-local/org.nguiland.infra/git-event-listener

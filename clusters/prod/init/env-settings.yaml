@@ -6,7 +6,7 @@ metadata:
 data:
   ENVIRONMENT: prod
   ARTIFACTORY_JCR_HOST: jcr.nguiland.org
-  ARTIFACTORY_JCR_IMAGE_HOST: jcr.nguiland.org
+  IMAGE_REGISTRY_HOST: jcr.nguiland.org
   ARTIFACTORY_JCR_PORT: "443"
   ARTIFACTORY_OSS_HOST: ""
   ARTIFACTORY_OSS_PORT: ""
