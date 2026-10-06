@@ -9,7 +9,7 @@ spec:
   dependsOn:
     - name: teams-namespaces
     - name: sops-age
-  path: ./common/optional/tenant-resources
+  path: ./common/base/tenant-resources
   prune: true
   sourceRef:
     kind: GitRepository

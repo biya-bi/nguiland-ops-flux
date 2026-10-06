@@ -9,5 +9,4 @@ resources:
   - postgres
   - providers
   - tekton
-  - tenant-resources/sync.yaml
   - tekton-pipelinerun-cleanup

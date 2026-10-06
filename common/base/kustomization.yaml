@@ -16,3 +16,4 @@ resources:
   - services
   - sops-age
   - teams
+  - tenant-resources/sync.yaml
