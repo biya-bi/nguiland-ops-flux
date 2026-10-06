@@ -1,0 +1,17 @@
+apiVersion: capsule.clastix.io/v1beta2
+kind: GlobalTenantResource
+metadata:
+  name: maven-settings
+spec:
+  tenantSelector:
+    matchLabels:
+      platform.nguiland.org/maven-settings: "true"
+
+  resyncPeriod: 10m
+
+  resources:
+    - namespacedItems:
+        - apiVersion: v1
+          kind: Secret
+          name: maven-settings
+          namespace: ${ENVIRONMENT}
