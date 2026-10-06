@@ -9,6 +9,7 @@ spec:
     - name: sops-age
   path: ./install
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: nguiland-ops-tekton

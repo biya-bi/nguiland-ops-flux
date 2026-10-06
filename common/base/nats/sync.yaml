@@ -8,19 +8,11 @@ spec:
   timeout: 10m
   path: ./common/base/nats
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  healthChecks:
-    - apiVersion: helm.toolkit.fluxcd.io/v2
-      kind: HelmRelease
-      name: nats
-      namespace: ${ENVIRONMENT}
-    - apiVersion: helm.toolkit.fluxcd.io/v2
-      kind: HelmRelease
-      name: nack
-      namespace: ${ENVIRONMENT}
   postBuild:
     substituteFrom:
       - kind: ConfigMap

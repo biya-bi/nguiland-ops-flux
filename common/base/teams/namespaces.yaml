@@ -10,6 +10,7 @@ spec:
     - name: teams-tenants
   path: ./namespaces
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: teams

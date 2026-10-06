@@ -11,6 +11,7 @@ spec:
     - name: git-events
   path: ./common/base/git-event-listener
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system

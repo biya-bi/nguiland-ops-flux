@@ -9,6 +9,7 @@ spec:
     - name: projects
   path: ./common/base/chart-repository
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system

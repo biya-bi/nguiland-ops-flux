@@ -10,15 +10,11 @@ spec:
     - name: nats
   path: ./common/base/git-events
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  healthChecks:
-    - apiVersion: jetstream.nats.io/v1beta2
-      kind: Stream
-      name: git-events
-      namespace: ${ENVIRONMENT}
   postBuild:
     substituteFrom:
       - kind: ConfigMap
