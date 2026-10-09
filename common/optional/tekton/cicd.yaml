@@ -9,7 +9,6 @@ spec:
   interval: 10m
   path: ./cicd
   prune: true
-  wait: true
   sourceRef:
     kind: GitRepository
     name: nguiland-ops-tekton
