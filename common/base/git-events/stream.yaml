@@ -9,5 +9,5 @@ spec:
     - flux.gitrepository.events
   storage: file
   retention: limits
-  maxAge: 2160h
+  maxAge: 336h
   replicas: 1
