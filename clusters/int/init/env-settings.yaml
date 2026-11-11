@@ -12,6 +12,4 @@ data:
   ARTIFACTORY_OSS_PORT: "443"
   ARTIFACTORY_OSS_SCHEME: https
   KEYCLOAK_HOST: int-keycloak.nguiland.org
-  OSTOCK_ANGULAR_FRONTEND_HOST: int-ostockweb.nguiland.org
-  OSTOCK_GATEWAY_SERVICE_HOST: int-ostockapi.nguiland.org
   SKIP_TLS: "false"
