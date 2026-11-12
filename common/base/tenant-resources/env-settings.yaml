@@ -1,0 +1,17 @@
+apiVersion: capsule.clastix.io/v1beta2
+kind: GlobalTenantResource
+metadata:
+  name: env-settings
+spec:
+  tenantSelector:
+    matchLabels:
+      platform.nguiland.org/env-settings: "true"
+
+  resyncPeriod: 10m
+
+  resources:
+    - namespacedItems:
+        - apiVersion: v1
+          kind: ConfigMap
+          name: env-settings
+          namespace: ${ENVIRONMENT}
