@@ -12,4 +12,6 @@ data:
   ARTIFACTORY_OSS_PORT: "443"
   ARTIFACTORY_OSS_SCHEME: https
   KEYCLOAK_HOST: int-keycloak.nguiland.org
+  KEYCLOAK_PORT: "443"
+  KEYCLOAK_SCHEME: https
   SKIP_TLS: "false"
