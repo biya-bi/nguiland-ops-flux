@@ -25,9 +25,26 @@ spec:
   values:
     crds:
       install: true
+    global:
+      jobs:
+        kubectl:
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
     manager:
       options:
         capsuleConfiguration: default
         administrators:
           - kind: ServiceAccount
             name: system:serviceaccount:flux-system:kustomize-controller
+      resources:
+        requests:
+          cpu: 50m
+          memory: 64Mi
+        limits:
+          cpu: 250m
+          memory: 256Mi

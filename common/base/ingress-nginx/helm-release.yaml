@@ -31,3 +31,28 @@ spec:
           kind: Deployment
   values:
     replicaCount: 1
+    controller:
+      admissionWebhooks:
+        createSecretJob:
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 250m
+              memory: 128Mi
+        patchWebhookJob:
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 250m
+              memory: 128Mi
+      resources:
+        requests:
+          cpu: 100m
+          memory: 90Mi
+        limits:
+          cpu: 500m
+          memory: 256Mi

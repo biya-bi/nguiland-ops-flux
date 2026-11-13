@@ -26,6 +26,14 @@ spec:
   driftDetection:
     mode: enabled
   values:
+    container:
+      resources:
+        requests:
+          cpu: 100m
+          memory: 128Mi
+        limits:
+          cpu: 500m
+          memory: 512Mi
     config:
       jetstream:
         enabled: true
@@ -36,3 +44,21 @@ spec:
             size: 1Gi
         memoryStore:
           enabled: false
+    natsBox:
+      container:
+        resources:
+          requests:
+            cpu: 25m
+            memory: 32Mi
+          limits:
+            cpu: 100m
+            memory: 128Mi
+    reloader:
+      merge:
+        resources:
+          requests:
+            cpu: 25m
+            memory: 32Mi
+          limits:
+            cpu: 100m
+            memory: 128Mi

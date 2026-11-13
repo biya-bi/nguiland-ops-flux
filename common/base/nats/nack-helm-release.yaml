@@ -26,6 +26,13 @@ spec:
   test:
     enable: false
   values:
+    resources:
+      requests:
+        cpu: 50m
+        memory: 64Mi
+      limits:
+        cpu: 250m
+        memory: 256Mi
     jetstream:
       enabled: true
       nats:
