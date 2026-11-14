@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 10m
   dependsOn:
-    - name: projects
+    - name: cicd
   path: ./common/base/chart-repository
   prune: true
   wait: true
