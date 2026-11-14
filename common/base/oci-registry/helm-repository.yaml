@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: artifactory-oci
+  name: oci-registry
   namespace: ${ENVIRONMENT}
 spec:
   type: oci

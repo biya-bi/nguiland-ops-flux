@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../../base/artifactory-oci
+  - ../../../base/oci-registry
 
 patches:
   - patch: |-
@@ -15,4 +15,4 @@ patches:
         value: true
     target:
       kind: HelmRepository
-      name: artifactory-oci
+      name: oci-registry

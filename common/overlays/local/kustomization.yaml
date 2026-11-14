@@ -31,10 +31,10 @@ patches:
   - patch: |-
       - op: replace
         path: /spec/path
-        value: ./common/overlays/local/artifactory-oci
+        value: ./common/overlays/local/oci-registry
     target:
       kind: Kustomization
-      name: artifactory-oci
+      name: oci-registry
   - patch: |-
       - op: add
         path: /spec/dependsOn/-

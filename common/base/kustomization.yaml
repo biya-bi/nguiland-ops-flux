@@ -2,7 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - artifactory-jcr/sync.yaml
-  - artifactory-oci/sync.yaml
   - chart-repository/sync.yaml
   - config-maps
   - crds
@@ -13,6 +12,7 @@ resources:
   - ingresses
   - keycloak
   - nats/sync.yaml
+  - oci-registry/sync.yaml
   - policies
   - projects
   - providers

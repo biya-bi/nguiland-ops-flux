@@ -7,7 +7,7 @@ spec:
   interval: 10m
   timeout: 10m
   dependsOn:
-    - name: artifactory-oci
+    - name: oci-registry
     - name: teams-namespaces
   path: ./common/optional/tekton-pipelinerun-cleanup
   prune: true
