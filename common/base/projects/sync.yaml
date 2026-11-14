@@ -12,7 +12,6 @@ spec:
     - name: tenant-resources
   path: .
   prune: true
-  wait: true
   sourceRef:
     kind: GitRepository
     name: projects
