@@ -6,6 +6,7 @@ metadata:
 spec:
   type: oci
   url: oci://${IMAGE_REGISTRY_HOST}/docker-local
+  insecure: ${OCI_REGISTRY_INSECURE}
   interval: 5m
   secretRef:
     name: docker-config

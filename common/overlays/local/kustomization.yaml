@@ -29,13 +29,6 @@ patches:
       kind: Ingress
       name: nguiland
   - patch: |-
-      - op: replace
-        path: /spec/path
-        value: ./common/overlays/local/oci-registry
-    target:
-      kind: Kustomization
-      name: oci-registry
-  - patch: |-
       - op: add
         path: /spec/dependsOn/-
         value:

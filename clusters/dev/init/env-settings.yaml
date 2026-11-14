@@ -7,6 +7,7 @@ data:
   ENVIRONMENT: dev
   ARTIFACTORY_JCR_HOST: dev-jcr.nguiland.org
   IMAGE_REGISTRY_HOST: dev-jcr.nguiland.org
+  OCI_REGISTRY_INSECURE: "false"
   ARTIFACTORY_JCR_PORT: "443"
   ARTIFACTORY_OSS_HOST: ""
   ARTIFACTORY_OSS_PORT: ""
