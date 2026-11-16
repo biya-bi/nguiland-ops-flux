@@ -12,7 +12,7 @@ spec:
       namespace: ${ENVIRONMENT}
   chart:
     spec:
-      chart: org.nguiland.infra/tekton-pipelinerun-cleanup
+      chart: charts/nguiland/tekton-pipelinerun-cleanup
       version: 0.1.0
       sourceRef:
         kind: HelmRepository

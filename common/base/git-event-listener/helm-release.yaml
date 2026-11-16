@@ -10,7 +10,7 @@ spec:
       namespace: ${ENVIRONMENT}
   chart:
     spec:
-      chart: org.nguiland.infra/git-event-listener
+      chart: charts/nguiland/git-event-listener
       version: 0.1.0
       sourceRef:
         kind: HelmRepository
