@@ -12,7 +12,7 @@ data:
   ARTIFACTORY_OSS_HOST: artifactory-oss.local
   ARTIFACTORY_OSS_PORT: "8082"
   ARTIFACTORY_OSS_SCHEME: http
-  KEYCLOAK_HOST: keycloak.local
-  KEYCLOAK_PORT: "8080"
+  KEYCLOAK_HOST: keycloak.127.0.0.1.nip.io
+  KEYCLOAK_PORT: "80"
   KEYCLOAK_SCHEME: http
   SKIP_TLS: "true"
