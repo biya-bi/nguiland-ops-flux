@@ -16,3 +16,6 @@ data:
   KEYCLOAK_PORT: "443"
   KEYCLOAK_SCHEME: https
   SKIP_TLS: "false"
+  POSTGRES_HOST: postgres.local
+  POSTGRES_PORT: "5432"
+  POSTGRES_SSL_MODE: prefer
