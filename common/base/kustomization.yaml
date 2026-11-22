@@ -14,6 +14,7 @@ resources:
   - nats/sync.yaml
   - oci-registry/sync.yaml
   - policies
+  - postgres-instances
   - postgres-provisioner
   - projects
   - providers
