@@ -1,0 +1,17 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: DatabaseRole
+metadata:
+  name: keycloak
+  namespace: ${ENVIRONMENT}
+spec:
+  cluster:
+    name: postgres
+  name: keycloak
+  login: true
+  superuser: false
+  createdb: false
+  createrole: false
+  password:
+    mode: generate
+    secret: keycloak-postgres-credentials
+  databaseRoleReclaimPolicy: retain
