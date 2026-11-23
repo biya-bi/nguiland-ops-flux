@@ -10,3 +10,9 @@ spec:
     name: postgres
   storage:
     size: 10Gi
+  bootstrap:
+    initdb:
+      database: forgejo
+      owner: forgejo
+      secret:
+        name: forgejo-postgres
