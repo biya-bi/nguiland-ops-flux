@@ -34,7 +34,7 @@ spec:
       - --http-port=8080
     database:
       vendor: postgres
-      hostname: postgres-rw
+      hostname: ${POSTGRES_HOST}
       port: ${POSTGRES_PORT}
     dbchecker:
       enabled: true
