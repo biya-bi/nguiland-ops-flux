@@ -8,7 +8,7 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: develop
+    branch: deploy-postgres
   secretRef:
     name: flux-system
   url: https://github.com/biya-bi/nguiland-ops-flux.git
