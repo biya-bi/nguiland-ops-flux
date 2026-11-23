@@ -8,7 +8,7 @@ resources:
   - ../../operators/cloudnative-pg/sync.yaml
   - ../../providers/nfs-ganesha
 
-# patches:
+patches:
 #   - patch: |-
 #       - op: remove
 #         path: /spec/tls
@@ -59,3 +59,12 @@ resources:
 #     target:
 #       kind: HelmRelease
 #       name: keycloak
+  - patch: |-
+      - op: replace
+        path: /spec/path
+        value: ./common/overlays/local/oauth/keycloak
+    target:
+      group: kustomize.toolkit.fluxcd.io
+      version: v1
+      kind: Kustomization
+      name: keycloak
