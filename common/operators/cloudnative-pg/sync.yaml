@@ -1,0 +1,20 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cloudnative-pg
+  namespace: ${ENVIRONMENT}
+spec:
+  interval: 10m
+  path: ./common/operators/cloudnative-pg
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  dependsOn:
+    - name: sops-age
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: env-settings

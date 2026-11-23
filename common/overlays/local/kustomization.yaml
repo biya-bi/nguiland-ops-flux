@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   # - ../../optional
+  - ../../operators/cloudnative-pg/sync.yaml
   - ../../providers/nfs-ganesha
 
 # patches:
