@@ -11,7 +11,6 @@ spec:
   superuser: false
   createdb: false
   createrole: false
-  password:
-    mode: generate
-    secret: keycloak-postgres-credentials
+  passwordSecret:
+    name: keycloak-postgres
   databaseRoleReclaimPolicy: retain
