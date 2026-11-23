@@ -4,7 +4,7 @@ resources:
   - ../../base
   # - ../../optional
   - ../../databases/postgres/sync.yaml
-  - ../../oauth/keycloak/sync.yaml
+  - ../../oauth/keycloak/sync
   - ../../operators/cloudnative-pg/sync.yaml
   - ../../providers/nfs-ganesha
 
@@ -62,9 +62,9 @@ patches:
   - patch: |-
       - op: replace
         path: /spec/path
-        value: ./common/overlays/local/oauth/keycloak
+        value: ./common/overlays/local/oauth/keycloak/server
     target:
       group: kustomize.toolkit.fluxcd.io
       version: v1
       kind: Kustomization
-      name: keycloak
+      name: keycloak-server

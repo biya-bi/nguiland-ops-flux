@@ -4,7 +4,7 @@ resources:
   - ../../base
   - ../../optional
   - ../../databases/postgres/sync.yaml
-  - ../../oauth/keycloak/sync.yaml
+  - ../../oauth/keycloak/sync
   - ../../operators/cloudnative-pg/sync.yaml
   - ../../providers/nfs-ganesha
 

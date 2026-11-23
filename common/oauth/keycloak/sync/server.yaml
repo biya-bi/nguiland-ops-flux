@@ -1,0 +1,20 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: keycloak-server
+  namespace: ${ENVIRONMENT}
+spec:
+  interval: 10m
+  path: ./common/oauth/keycloak/server
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  dependsOn:
+    - name: keycloak-postgres
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: env-settings
