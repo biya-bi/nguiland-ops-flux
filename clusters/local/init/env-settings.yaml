@@ -19,3 +19,5 @@ data:
   POSTGRES_HOST: postgres-rw.local
   POSTGRES_PORT: "5432"
   POSTGRES_SSL_MODE: prefer
+  FORGEJO_HOST: forgejo.127.0.0.1.nip.io
+  FORGEJO_SCHEME: https
