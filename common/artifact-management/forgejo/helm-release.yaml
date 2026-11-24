@@ -1,0 +1,90 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: forgejo
+  namespace: ${ENVIRONMENT}
+spec:
+  interval: 30m
+  chartRef:
+    kind: OCIRepository
+    name: forgejo
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    global:
+      hostAliases:
+        - ip: ${INGRESS_CONTROLLER_IP}
+          hostnames:
+            - ${KEYCLOAK_HOST}
+    ingress:
+      enabled: true
+      className: nginx
+      hosts:
+        - host: ${FORGEJO_HOST}
+          paths:
+            - path: /
+              pathType: Prefix
+              port: http
+      tls:
+        - hosts:
+            - ${FORGEJO_HOST}
+          secretName: ${FORGEJO_TLS_SECRET}
+    persistence:
+      enabled: true
+      storageClass: rwx-storage
+      size: 50Gi
+    gitea:
+      admin:
+        existingSecret: forgejo-admin
+      additionalConfigFromEnvs:
+        - name: FORGEJO__DATABASE__DB_TYPE
+          valueFrom:
+            secretKeyRef:
+              name: forgejo-postgres
+              key: type
+        - name: FORGEJO__DATABASE__HOST
+          valueFrom:
+            secretKeyRef:
+              name: forgejo-postgres
+              key: host
+        - name: FORGEJO__DATABASE__NAME
+          valueFrom:
+            secretKeyRef:
+              name: forgejo-postgres
+              key: database
+        - name: FORGEJO__DATABASE__USER
+          valueFrom:
+            secretKeyRef:
+              name: forgejo-postgres
+              key: username
+        - name: FORGEJO__DATABASE__PASSWD
+          valueFrom:
+            secretKeyRef:
+              name: forgejo-postgres
+              key: password
+      oauth:
+        - name: keycloak
+          provider: openidConnect
+          existingSecret: forgejo-keycloak-oauth
+          autoDiscoverUrl: ${KEYCLOAK_SCHEME}://${KEYCLOAK_HOST}/realms/applications/.well-known/openid-configuration
+          scopes: openid email profile
+          groupClaimName: groups
+          adminGroup: forgejo-admins
+      config:
+        server:
+          DOMAIN: ${FORGEJO_HOST}
+          ROOT_URL: ${FORGEJO_SCHEME}://${FORGEJO_HOST}/
+        packages:
+          ENABLED: true
+        service:
+          DISABLE_REGISTRATION: false
+          ALLOW_ONLY_EXTERNAL_REGISTRATION: true
+          SHOW_REGISTRATION_BUTTON: false
+        oauth2_client:
+          ENABLE_AUTO_REGISTRATION: true
+          ACCOUNT_LINKING: auto
+          UPDATE_AVATAR: true
