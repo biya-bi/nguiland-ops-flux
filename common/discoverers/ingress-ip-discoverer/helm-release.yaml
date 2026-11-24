@@ -6,16 +6,14 @@ metadata:
 spec:
   interval: 10m
   dependsOn:
-    - name: artifactory-jcr
-      namespace: ${ENVIRONMENT}
+    - name: ingress-nginx
   chart:
     spec:
-      chart: ops/charts/ingress-ip-discoverer
-      version: 0.1.0
+      chart: .
       sourceRef:
-        kind: HelmRepository
-        name: oci-registry
-      interval: 10m
+        kind: GitRepository
+        name: ingress-ip-discoverer
+      interval: 1h
   install:
     remediation:
       retries: 3

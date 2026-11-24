@@ -4,6 +4,7 @@ resources:
   - ../../base
   # - ../../optional
   - ../../databases/postgres/sync.yaml
+  - ../../discoverers/ingress-ip-discoverer
   - ../../oauth/keycloak/sync
   - ../../operators/cloudnative-pg/sync.yaml
   - ../../providers/nfs-ganesha
