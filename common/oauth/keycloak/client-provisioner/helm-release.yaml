@@ -1,0 +1,50 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: keycloak-client-provisioner
+  namespace: ${ENVIRONMENT}
+spec:
+  interval: 1h
+  releaseName: keycloak-client-provisioner
+  targetNamespace: ${ENVIRONMENT}
+  chart:
+    spec:
+      chart: .
+      sourceRef:
+        kind: GitRepository
+        name: keycloak-client-provisioner
+      interval: 1h
+  install:
+    createNamespace: true
+  values:
+    fullnameOverride: keycloak-client-provisioner
+    keycloak:
+      url: http://keycloak-http
+      adminRealm: master
+      realm: applications
+      adminSecret:
+        name: keycloak-admin
+        usernameKey: username
+        passwordKey: password
+    client:
+      id: forgejo
+      name: Forgejo
+      enabled: true
+      clientAuthenticatorType: client-secret
+      standardFlowEnabled: true
+      directAccessGrantsEnabled: false
+      serviceAccountsEnabled: false
+      implicitFlowEnabled: false
+      rootUrl: ${FORGEJO_SCHEME}://${FORGEJO_HOST}/
+      baseUrl: /
+      redirectUris:
+        - ${FORGEJO_SCHEME}://${FORGEJO_HOST}/user/oauth2/keycloak/callback
+      webOrigins:
+        - ${FORGEJO_SCHEME}://${FORGEJO_HOST}
+      frontchannelLogout: false
+      consentRequired: false
+      attributes: {}
+    outputSecret:
+      name: forgejo-keycloak-oauth
+      clientIdKey: client-id
+      clientSecretKey: client-secret
