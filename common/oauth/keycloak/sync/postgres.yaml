@@ -4,10 +4,21 @@ metadata:
   name: keycloak-postgres
   namespace: ${ENVIRONMENT}
 spec:
-  interval: 10m
+  interval: 1m
   path: ./common/oauth/keycloak/postgres
   prune: true
   wait: true
+  healthCheckExprs:
+    - apiVersion: postgresql.cnpg.io/v1
+      kind: DatabaseRole
+      inProgress: "!has(status.applied) || (status.applied == true && (!has(status.observedGeneration) || status.observedGeneration != metadata.generation))"
+      failed: "has(status.applied) && status.applied == false"
+      current: "has(status.applied) && status.applied == true && has(status.observedGeneration) && status.observedGeneration == metadata.generation"
+    - apiVersion: postgresql.cnpg.io/v1
+      kind: Database
+      inProgress: "!has(status.applied) || (status.applied == true && (!has(status.observedGeneration) || status.observedGeneration != metadata.generation))"
+      failed: "has(status.applied) && status.applied == false"
+      current: "has(status.applied) && status.applied == true && has(status.observedGeneration) && status.observedGeneration == metadata.generation"
   sourceRef:
     kind: GitRepository
     name: flux-system
