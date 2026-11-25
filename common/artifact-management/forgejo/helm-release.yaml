@@ -41,6 +41,8 @@ spec:
       enabled: true
       storageClass: rwx-storage
       size: 50Gi
+      accessModes:
+        - ReadWriteMany
     gitea:
       admin:
         existingSecret: forgejo-admin
