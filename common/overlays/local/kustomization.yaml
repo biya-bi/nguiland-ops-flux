@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../artifact-management/forgejo/sync.yaml
   - ../../base
+  - ../../certificates/sync.yaml
   # - ../../optional
   - ../../databases/postgres/sync.yaml
   - ../../discoverers/ingress-ip-discoverer
@@ -65,9 +66,25 @@ patches:
       - op: replace
         path: /spec/path
         value: ./common/overlays/local/oauth/keycloak/server
+      - op: add
+        path: /spec/dependsOn/-
+        value:
+          name: certificates
     target:
       group: kustomize.toolkit.fluxcd.io
       version: v1
       kind: Kustomization
       name: keycloak-server
-
+  - patch: |-
+      - op: replace
+        path: /spec/path
+        value: ./common/overlays/local/artifact-management/forgejo
+      - op: add
+        path: /spec/dependsOn/-
+        value:
+          name: certificates
+    target:
+      group: kustomize.toolkit.fluxcd.io
+      version: v1
+      kind: Kustomization
+      name: forgejo
