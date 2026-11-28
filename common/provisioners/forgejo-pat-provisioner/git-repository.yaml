@@ -1,0 +1,12 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: forgejo-pat-provisioner
+  namespace: ${ENVIRONMENT}
+spec:
+  interval: 1m0s
+  ref:
+    branch: develop
+  secretRef:
+    name: ssh-credentials
+  url: ssh://github.com/nguiland/ops-charts-forgejo-pat-provisioner.git

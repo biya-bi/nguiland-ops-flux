@@ -9,6 +9,7 @@ resources:
   - ../../oauth/keycloak/sync
   - ../../operators/cloudnative-pg/sync.yaml
   - ../../providers/nfs-ganesha
+  - ../../provisioners/forgejo-pat-provisioner/sync.yaml
 
 patches:
   - patch: |-

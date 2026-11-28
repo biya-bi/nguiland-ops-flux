@@ -1,0 +1,22 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: forgejo-pat-provisioner
+  namespace: ${ENVIRONMENT}
+spec:
+  interval: 10m
+  timeout: 10m
+  dependsOn:
+    - name: forgejo
+    - name: teams-namespaces
+  path: ./common/provisioners/forgejo-pat-provisioner
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: env-settings
